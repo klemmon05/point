@@ -1,0 +1,393 @@
+:root {
+  --bg: #f7f8fb;
+  --surface: #ffffff;
+  --text: #14213d;
+  --muted: #4f5d75;
+  --line: #d8dee8;
+  --accent: #0f2f5f;
+  --accent-soft: #153d7a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  background: color-mix(in srgb, #f7f8fb 92%, transparent);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.brand img {
+  height: 34px;
+  width: auto;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.3rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.site-nav a:hover {
+  color: var(--accent);
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 5.5rem 0 4rem;
+  background: linear-gradient(180deg, #e9eff8 0%, var(--bg) 85%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(180deg, rgba(233, 239, 248, 0.35) 0%, rgba(247, 248, 251, 0.9) 75%),
+    url("cityscape.svg");
+  background-position: center top, center top;
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  opacity: 0.9;
+  z-index: -2;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 55%;
+  background: linear-gradient(180deg, rgba(247, 248, 251, 0) 0%, rgba(247, 248, 251, 1) 100%);
+  z-index: -1;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.eyebrow {
+  color: var(--accent-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+h1,
+.section-title,
+.hero-card h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  line-height: 1.2;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-top: 0.35rem;
+}
+
+.lead {
+  font-size: 1.2rem;
+  margin: 0.75rem 0;
+  color: #1e3257;
+  font-weight: 600;
+}
+
+.hero-copy {
+  max-width: 58ch;
+  color: var(--muted);
+}
+
+.hero-card {
+  background: color-mix(in srgb, var(--surface) 92%, #f2f6fc 8%);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 18px 45px rgba(18, 40, 76, 0.08);
+}
+
+.hero-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.contact-inline {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: var(--accent) !important;
+  font-weight: 700;
+}
+
+.section {
+  padding: 4.25rem 0;
+}
+
+.section-title {
+  font-size: clamp(1.55rem, 2.8vw, 2.2rem);
+  margin-bottom: 1rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.card h3 {
+  margin: 0;
+}
+
+.card-kicker {
+  margin: 0.45rem 0;
+  font-weight: 700;
+  color: var(--accent-soft);
+}
+
+.card p {
+  color: var(--muted);
+}
+
+
+.enterprise-platform {
+  background: #eef2f8;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.centered {
+  text-align: center;
+}
+
+.enterprise-intro {
+  text-align: center;
+  color: #3b5579;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin: 0 auto 1.6rem;
+  max-width: 80ch;
+}
+
+.capability-venn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0.5rem auto 1rem;
+}
+
+.venn-pill {
+  border: 2px solid #537f67;
+  color: #2f5f49;
+  background: color-mix(in srgb, #d7e8de 70%, transparent);
+  border-radius: 999px;
+  text-align: center;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(1.15rem, 2.8vw, 2rem);
+  padding: 1rem 1.2rem;
+}
+
+.venn-pill.left {
+  margin-right: -2rem;
+}
+
+.venn-pill.right {
+  margin-left: -2rem;
+}
+
+.capability-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 1.25rem 0 1.75rem;
+}
+
+.capability-columns ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: #203b5a;
+}
+
+.capability-columns li {
+  margin: 0.35rem 0;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+}
+
+.office-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-top: 1.35rem;
+}
+
+.flow-item {
+  position: relative;
+  background: linear-gradient(180deg, #f6f1ea 0%, #efe5da 100%);
+  border: 1px solid #d7c7b7;
+  padding: 1.2rem 2.2rem 1.2rem 1.25rem;
+}
+
+.flow-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -40px;
+  width: 40px;
+  height: calc(100% + 2px);
+  background: linear-gradient(180deg, #f6f1ea 0%, #efe5da 100%);
+  border-top: 1px solid #d7c7b7;
+  border-right: 1px solid #d7c7b7;
+  transform: skewX(-36deg);
+  transform-origin: right;
+  z-index: 2;
+}
+
+.flow-item h3 {
+  margin: 0;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: #19345d;
+  text-align: center;
+}
+
+.flow-item p {
+  margin: 0.35rem 0 0;
+  color: #2c456b;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.industry-grid {
+  margin-top: 2.25rem;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.industry-card {
+  text-align: center;
+  background: #f8fafd;
+  border: 1px solid #d9e1ec;
+  border-radius: 10px;
+  padding: 0.8rem 0.5rem;
+}
+
+.industry-card h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.25;
+  color: #38424f;
+}
+
+.industry-card span {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 1.8rem;
+}
+
+.cta {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(120deg, var(--accent) 0%, #204b8a 100%);
+  border-radius: 999px;
+  padding: 0.8rem 1.3rem;
+  font-weight: 600;
+  margin-top: 0.6rem;
+}
+
+.contact {
+  text-align: center;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 1.8rem 0 2.2rem;
+  text-align: center;
+  color: #6a7489;
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  margin: 0.2rem 0;
+}
+
+@media (max-width: 900px) {
+  .capability-venn,
+  .capability-columns,
+  .industry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .venn-pill.left,
+  .venn-pill.right {
+    margin: 0;
+  }
+
+  .office-flow {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .flow-item {
+    padding-right: 1.25rem;
+  }
+
+  .flow-item:not(:last-child)::after {
+    display: none;
+  }
+
+  .hero-grid,
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 4.5rem;
+  }
+
+  .site-nav {
+    gap: 0.75rem;
+    font-size: 0.95rem;
+  }
+}
